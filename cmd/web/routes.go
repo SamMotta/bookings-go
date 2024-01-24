@@ -1,16 +1,13 @@
 package main
 
 import (
-	"net/http"
-	"runtime"
-
-	"github.com/SamMotta/bookings-go/pkg/config"
 	"github.com/SamMotta/bookings-go/pkg/handlers"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
+	"net/http"
 )
 
-func routes(app *config.AppConfig) http.Handler {
+func routes() http.Handler {
 	// mux := pat.New()
 
 	// mux.Get("/", http.HandlerFunc(handlers.Repo.Home))
@@ -22,15 +19,10 @@ func routes(app *config.AppConfig) http.Handler {
 	mux.Use(NoSurf)
 	mux.Use(SessionLoad)
 
-	mux.Get("/", http.HandlerFunc(handlers.Repo.Home))
-	mux.Get("/about", http.HandlerFunc(handlers.Repo.About))
+	mux.Get("/", handlers.Repo.Home)
+	mux.Get("/about", handlers.Repo.About)
 
-	var dir string
-	if runtime.GOOS == "windows" {
-		dir = "./static"
-	} else {
-		dir = "../../static"
-	}
+	dir := "./static"
 
 	fileServer := http.FileServer(
 		http.Dir(dir),

@@ -6,7 +6,6 @@ import (
 	"log"
 	"net/http"
 	"path/filepath"
-	"runtime"
 	"strings"
 
 	"github.com/SamMotta/bookings-go/pkg/config"
@@ -15,16 +14,19 @@ import (
 
 var app *config.AppConfig
 
-// Sets the config for the template package
+// NewTemplates Sets the config for the template package
 func NewTemplates(a *config.AppConfig) {
 	app = a
 }
 
+// AddDefaultData Sets default data to all pages
 func AddDefaultData(td *models.TemplateData) *models.TemplateData {
 	return td
 }
 
 // RenderTemplate renders templates using html/template
+//
+//goland:noinspection GoNameStartsWithPackageName
 func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	var tc map[string]*template.Template
 	// Get the template cache
@@ -65,13 +67,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 	myCache := map[string]*template.Template{}
 
 	// Get all files that end with .page.gohtml from templates folder
-	var dir string
-
-	if runtime.GOOS == "windows" {
-		dir = "./templates"
-	} else {
-		dir = "../../templates"
-	}
+	dir := "./templates"
 
 	pages, err := filepath.Glob(dir + "/*.page.gohtml")
 

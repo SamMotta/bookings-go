@@ -48,7 +48,7 @@ func main() {
 
 	server := &http.Server{
 		Addr:    addr,
-		Handler: routes(&app),
+		Handler: routes(),
 	}
 
 	fmt.Printf("Starting server on address %s\n", addr)
