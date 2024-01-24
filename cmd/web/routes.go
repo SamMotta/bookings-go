@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"runtime"
 
 	"github.com/SamMotta/bookings-go/pkg/config"
 	"github.com/SamMotta/bookings-go/pkg/handlers"
@@ -23,6 +24,22 @@ func routes(app *config.AppConfig) http.Handler {
 
 	mux.Get("/", http.HandlerFunc(handlers.Repo.Home))
 	mux.Get("/about", http.HandlerFunc(handlers.Repo.About))
+
+	var dir string
+	if runtime.GOOS == "windows" {
+		dir = "./static"
+	} else {
+		dir = "../../static"
+	}
+
+	fileServer := http.FileServer(
+		http.Dir(dir),
+	)
+
+	mux.Handle(
+		"/static/*",
+		http.StripPrefix("/static", fileServer),
+	)
 
 	return mux
 }

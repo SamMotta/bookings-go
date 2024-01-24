@@ -68,7 +68,7 @@ func CreateTemplateCache() (map[string]*template.Template, error) {
 	var dir string
 
 	if runtime.GOOS == "windows" {
-		dir = "templates"
+		dir = "./templates"
 	} else {
 		dir = "../../templates"
 	}
