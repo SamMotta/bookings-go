@@ -9,6 +9,7 @@ import (
 	"github.com/SamMotta/bookings-go/pkg/config"
 	"github.com/SamMotta/bookings-go/pkg/handlers"
 	"github.com/SamMotta/bookings-go/pkg/render"
+
 	"github.com/alexedwards/scs/v2"
 )
 

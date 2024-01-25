@@ -2,3 +2,4 @@
 *.out
 # vendor/
 go.work
+.idea

@@ -1,8 +1,6 @@
 package handlers
 
-import "github.com/SamMotta/bookings-go/pkg/config"
-
-iRendermport (
+import (
 	"net/http"
 
 	"github.com/SamMotta/bookings-go/pkg/config"

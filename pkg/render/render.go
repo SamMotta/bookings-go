@@ -29,6 +29,7 @@ func AddDefaultData(td *models.TemplateData) *models.TemplateData {
 //goland:noinspection GoNameStartsWithPackageName
 func RenderTemplate(w http.ResponseWriter, tmpl string, td *models.TemplateData) {
 	var tc map[string]*template.Template
+
 	// Get the template cache
 	if app.UseCache {
 		tc = app.TemplateCache
