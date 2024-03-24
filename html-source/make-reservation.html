@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>My nice page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <style>
+        .my-footer {
+            background-color: #163b65;
+            height: 5em;
+            margin-top: 1.5em;
+            padding: 1em;
+            color: #FFFFFF;
+            font-size: 80%;
+        }
+
+        .room-image {
+            max-width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Rooms
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/rooms/generals-quarters.html">General's Quarters</a>
+                            </li>
+                            <li><a class="dropdown-item" href="/rooms/majors-suite.html">Major's suite</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/reservation.html">Book Now</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Make Reservation</h1>
+
+                <form action="" method="post" class="needs-validation" novalidate>
+
+                    <div class="mt-5">
+                        <label for="first_name">First Name:</label>
+                        <input required autocomplete="off" type="text" class="form-control" id="first_name"
+                            name="first_name">
+                    </div>
+
+                    <div>
+                        <label for="last_name">Last Name:</label>
+                        <input required autocomplete="off" type="text" class="form-control" id="last_name"
+                            name="last_name">
+                    </div>
+
+                    <div>
+                        <label for="email">E-mail:</label>
+                        <input required autocomplete="off" type="email" class="form-control" id="email" name="email">
+                    </div>
+
+                    <div>
+                        <label for="phone">Phone number:</label>
+                        <input required autocomplete="off" type="text" class="form-control" id="phone" name="phone">
+                    </div>
+
+                    <input type="submit" class="btn btn-primary mt-3" value="Make reservation">
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row my-footer mx-0">
+        <div class="col">
+            Left
+        </div>
+        <div class="col">
+            Middle
+        </div>
+        <div class="col">
+            Right
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
